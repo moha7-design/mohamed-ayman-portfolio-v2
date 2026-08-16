@@ -3,37 +3,39 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Mohamed Ayman — Developer • AI • Robotics</title>
-<meta name="description" content="Mohamed Ayman — Developer, AI, Robotics and creative technology portfolio.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Ayman — AI • Robotics • Developer</title>
+<meta name="description" content="Mohamed Ayman — Developer, AI, Robotics, Apps and experimental technology.">
 
 <style>
 :root{
-  --bg:#04050a;
-  --bg2:#080b12;
-  --card:rgba(13,17,28,.72);
-  --card2:#101624;
-  --text:#f8f9ff;
-  --muted:#9299aa;
+  --bg:#03040a;
+  --bg2:#070914;
+  --text:#f7f8ff;
+  --muted:#9299ad;
   --line:rgba(255,255,255,.10);
   --purple:#8b5cf6;
-  --blue:#22d3ee;
+  --cyan:#22d3ee;
   --pink:#ec4899;
   --green:#34d399;
-  --shadow:0 30px 100px rgba(0,0,0,.45);
+  --orange:#fb923c;
+  --card:rgba(10,14,25,.72);
+  --shadow:0 35px 100px rgba(0,0,0,.45);
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
+
 html{scroll-behavior:smooth}
+
 body{
-  color:var(--text);
   background:
-    radial-gradient(circle at 12% 5%,rgba(139,92,246,.18),transparent 25%),
-    radial-gradient(circle at 90% 15%,rgba(34,211,238,.12),transparent 24%),
-    linear-gradient(180deg,#04050a,#070912 55%,#04050a);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  line-height:1.6;
+    radial-gradient(circle at 10% 0%,rgba(139,92,246,.17),transparent 25%),
+    radial-gradient(circle at 90% 10%,rgba(34,211,238,.11),transparent 25%),
+    linear-gradient(180deg,var(--bg),var(--bg2) 45%,var(--bg));
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   overflow-x:hidden;
+  line-height:1.6;
 }
 
 body:before{
@@ -41,34 +43,35 @@ body:before{
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:.20;
+  z-index:-1;
+  opacity:.22;
   background-image:
     linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
     linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-  background-size:44px 44px;
-  mask-image:linear-gradient(to bottom,black 0%,transparent 82%);
+  background-size:48px 48px;
+  mask-image:linear-gradient(to bottom,black,transparent 80%);
 }
 
 body:after{
   content:"";
   position:fixed;
-  width:420px;
-  height:420px;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  background:rgba(124,58,237,.08);
+  filter:blur(120px);
   left:50%;
   top:35%;
   transform:translate(-50%,-50%);
-  border-radius:50%;
-  background:rgba(124,58,237,.08);
-  filter:blur(100px);
   pointer-events:none;
-  z-index:-1;
+  z-index:-2;
 }
 
 a{text-decoration:none;color:inherit}
 button{font:inherit}
-.container{width:min(1180px,92%);margin:auto}
+.container{width:min(1200px,92%);margin:auto}
 
-/* NAVIGATION */
+/* ================= NAV ================= */
 
 .navbar{
   position:fixed;
@@ -76,130 +79,136 @@ button{font:inherit}
   left:0;
   right:0;
   z-index:1000;
-  border-bottom:1px solid transparent;
-  transition:.3s;
+  transition:.35s;
 }
 
 .navbar.scrolled{
-  background:rgba(4,5,10,.78);
-  backdrop-filter:blur(20px);
-  border-color:var(--line);
+  background:rgba(3,4,10,.72);
+  backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--line);
 }
 
 .nav{
-  height:76px;
+  height:78px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
-.brand{
+.logo{
   display:flex;
   align-items:center;
   gap:11px;
   font-weight:900;
 }
 
-.brand-icon{
-  width:42px;
-  height:42px;
-  border-radius:13px;
+.logo-mark{
+  width:43px;
+  height:43px;
   display:grid;
   place-items:center;
-  background:linear-gradient(135deg,var(--purple),var(--blue));
-  box-shadow:0 0 35px rgba(139,92,246,.28);
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--purple),var(--cyan));
+  box-shadow:0 0 40px rgba(139,92,246,.28);
 }
 
-.brand-text span{color:#9f8cff}
+.logo-name span{
+  color:#a894ff;
+}
 
 .nav-links{
   display:flex;
-  align-items:center;
-  gap:28px;
-  color:#a8adbb;
-  font-size:14px;
+  gap:27px;
+  color:#9ca3b5;
+  font-size:13px;
 }
 
-.nav-links a{
-  transition:.2s;
-}
+.nav-links a{transition:.2s}
+.nav-links a:hover{color:#fff}
 
-.nav-links a:hover{color:white}
-
-.nav-github{
+.nav-cta{
   padding:10px 15px;
   border:1px solid var(--line);
   border-radius:11px;
+  font-size:13px;
+  font-weight:800;
   transition:.25s;
 }
 
-.nav-github:hover{
-  border-color:rgba(139,92,246,.7);
+.nav-cta:hover{
   transform:translateY(-2px);
+  border-color:rgba(139,92,246,.6);
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
   min-height:900px;
   padding-top:150px;
-  padding-bottom:90px;
+  padding-bottom:100px;
   display:grid;
-  grid-template-columns:1.08fr .92fr;
-  gap:65px;
+  grid-template-columns:1.05fr .95fr;
   align-items:center;
+  gap:60px;
 }
 
-.available{
+.status{
   display:inline-flex;
   align-items:center;
   gap:9px;
   padding:8px 13px;
   border:1px solid rgba(52,211,153,.25);
-  background:rgba(52,211,153,.06);
-  color:#8af0c8;
   border-radius:999px;
-  font-size:12px;
-  font-weight:700;
+  background:rgba(52,211,153,.06);
+  color:#8df1ca;
+  font-size:11px;
+  font-weight:800;
 }
 
-.available i{
+.status-dot{
   width:7px;
   height:7px;
   border-radius:50%;
   background:var(--green);
-  box-shadow:0 0 15px var(--green);
+  box-shadow:0 0 16px var(--green);
 }
 
 .hero h1{
   margin-top:25px;
-  font-size:clamp(55px,7.5vw,98px);
-  line-height:.95;
-  letter-spacing:-6px;
+  font-size:clamp(58px,8vw,108px);
+  line-height:.91;
+  letter-spacing:-7px;
+  max-width:900px;
 }
 
-.hero-gradient{
+.gradient-text{
   display:block;
-  background:linear-gradient(100deg,#fff 10%,#b79cff 42%,#48ddff 78%,#fff);
+  background:linear-gradient(
+    100deg,
+    #fff,
+    #b79aff 35%,
+    #47ddff 70%,
+    #fff
+  );
   background-size:250% auto;
   color:transparent;
   background-clip:text;
   -webkit-background-clip:text;
-  animation:gradientMove 6s linear infinite;
+  animation:gradient 6s linear infinite;
 }
 
-@keyframes gradientMove{
+@keyframes gradient{
   to{background-position:250% center}
 }
 
-.hero-description{
-  max-width:670px;
-  margin-top:28px;
+.hero-copy{
+  max-width:690px;
+  margin-top:29px;
   color:var(--muted);
-  font-size:18px;
+  font-size:17px;
 }
 
-.hero-actions{
+.actions{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
@@ -212,198 +221,240 @@ button{font:inherit}
   justify-content:center;
   gap:8px;
   padding:14px 19px;
-  border:1px solid var(--line);
   border-radius:12px;
-  font-size:14px;
-  font-weight:800;
+  border:1px solid var(--line);
+  font-size:13px;
+  font-weight:900;
   transition:.25s;
 }
 
 .btn:hover{
   transform:translateY(-3px);
-  border-color:rgba(139,92,246,.65);
+  border-color:rgba(139,92,246,.6);
 }
 
 .btn-primary{
   border:0;
   background:linear-gradient(135deg,#7c3aed,#2563eb);
-  box-shadow:0 18px 50px rgba(91,66,190,.28);
+  box-shadow:0 20px 60px rgba(91,66,190,.3);
 }
 
 .btn-primary:hover{
-  box-shadow:0 22px 65px rgba(91,66,190,.43);
+  box-shadow:0 25px 80px rgba(91,66,190,.45);
 }
 
-/* HERO VISUAL */
+/* ================= AI CORE ================= */
 
-.hero-visual{
+.ai-stage{
+  min-height:560px;
   position:relative;
-  min-height:530px;
-  border:1px solid var(--line);
-  border-radius:32px;
   overflow:hidden;
+  border-radius:34px;
+  border:1px solid var(--line);
   background:
-    radial-gradient(circle at 50% 38%,rgba(139,92,246,.26),transparent 33%),
-    radial-gradient(circle at 80% 75%,rgba(34,211,238,.12),transparent 28%),
-    linear-gradient(145deg,#0b0e17,#080b12);
+    radial-gradient(circle at 50% 45%,rgba(139,92,246,.22),transparent 31%),
+    radial-gradient(circle at 75% 80%,rgba(34,211,238,.11),transparent 30%),
+    linear-gradient(145deg,#0a0d18,#05070e);
   box-shadow:var(--shadow);
+  transform-style:preserve-3d;
+  transition:transform .2s ease;
 }
 
-.orbit{
+.ai-stage:before{
+  content:"";
   position:absolute;
-  border:1px solid rgba(139,92,246,.22);
-  border-radius:50%;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.08) 0 1px,transparent 2px),
+    radial-gradient(circle at 80% 30%,rgba(255,255,255,.06) 0 1px,transparent 2px),
+    radial-gradient(circle at 70% 70%,rgba(255,255,255,.05) 0 1px,transparent 2px);
+  background-size:100px 100px,150px 150px,130px 130px;
+}
+
+.scan{
+  position:absolute;
+  left:0;
+  right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  opacity:.35;
+  animation:scan 5s linear infinite;
+}
+
+@keyframes scan{
+  from{top:-5%}
+  to{top:105%}
+}
+
+.ring{
+  position:absolute;
   left:50%;
   top:50%;
-  transform:translate(-50%,-50%) rotate(-18deg);
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(139,92,246,.25);
+  border-radius:50%;
 }
 
-.orbit.one{width:270px;height:270px}
-.orbit.two{width:390px;height:190px;transform:translate(-50%,-50%) rotate(62deg)}
-.orbit.three{width:470px;height:250px;transform:translate(-50%,-50%) rotate(-48deg)}
+.ring-a{width:280px;height:280px}
+.ring-b{
+  width:410px;
+  height:210px;
+  transform:translate(-50%,-50%) rotate(65deg);
+}
+.ring-c{
+  width:500px;
+  height:270px;
+  transform:translate(-50%,-50%) rotate(-45deg);
+}
 
 .core{
   position:absolute;
   left:50%;
   top:50%;
+  width:150px;
+  height:150px;
   transform:translate(-50%,-50%);
-  width:145px;
-  height:145px;
-  border-radius:35px;
+  border-radius:40px;
   display:grid;
   place-items:center;
-  font-size:70px;
-  background:linear-gradient(145deg,#151a2b,#0d111c);
-  border:1px solid rgba(255,255,255,.13);
+  font-size:65px;
+  background:
+    radial-gradient(circle at 35% 25%,rgba(255,255,255,.12),transparent 25%),
+    linear-gradient(145deg,#151a2b,#090d17);
+  border:1px solid rgba(255,255,255,.14);
   box-shadow:
-    0 0 70px rgba(139,92,246,.35),
-    inset 0 0 40px rgba(255,255,255,.03);
-  animation:coreFloat 4s ease-in-out infinite;
+    0 0 80px rgba(139,92,246,.36),
+    inset 0 0 35px rgba(255,255,255,.035);
+  animation:float 4s ease-in-out infinite;
 }
 
-@keyframes coreFloat{
+@keyframes float{
   0%,100%{transform:translate(-50%,-50%) translateY(0)}
-  50%{transform:translate(-50%,-50%) translateY(-13px)}
+  50%{transform:translate(-50%,-50%) translateY(-12px)}
 }
 
-.floating-card{
+.ai-label{
   position:absolute;
-  padding:11px 13px;
+  padding:10px 13px;
   border:1px solid var(--line);
+  background:rgba(7,10,17,.78);
+  backdrop-filter:blur(15px);
   border-radius:12px;
-  background:rgba(10,13,21,.78);
-  backdrop-filter:blur(12px);
+  font-size:11px;
   box-shadow:0 15px 40px rgba(0,0,0,.3);
-  font-size:12px;
-  color:#dfe3ee;
 }
 
-.floating-card strong{display:block;color:white;font-size:13px}
-.floating-card span{color:#7f8799}
+.ai-label strong{
+  display:block;
+  color:#fff;
+  font-size:12px;
+}
 
-.float-a{top:75px;left:35px}
-.float-b{top:115px;right:30px}
-.float-c{bottom:85px;left:45px}
-.float-d{bottom:55px;right:38px}
+.ai-label span{color:#777f92}
 
-/* STATS */
+.ai-one{top:70px;left:30px}
+.ai-two{top:100px;right:28px}
+.ai-three{bottom:95px;left:35px}
+.ai-four{bottom:55px;right:35px}
+
+/* ================= STATS ================= */
 
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:14px;
-  position:relative;
-  z-index:2;
 }
 
 .stat{
-  padding:23px;
+  padding:24px;
   border:1px solid var(--line);
-  border-radius:17px;
+  border-radius:18px;
   background:var(--card);
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(14px);
   transition:.25s;
 }
 
 .stat:hover{
-  transform:translateY(-4px);
-  border-color:rgba(139,92,246,.35);
+  transform:translateY(-5px);
+  border-color:rgba(139,92,246,.38);
 }
 
-.stat-value{
-  font-size:29px;
-  font-weight:900;
+.stat-number{
+  font-size:30px;
+  font-weight:950;
 }
 
-.stat-label{
+.stat-text{
   color:var(--muted);
   font-size:12px;
 }
 
-/* SECTION */
+/* ================= SECTIONS ================= */
 
-.section{padding:115px 0}
+.section{padding:125px 0}
 
 .eyebrow{
-  color:#9e8cff;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:2.5px;
+  color:#a48fff;
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:3px;
   text-transform:uppercase;
 }
 
 .section-title{
-  margin-top:9px;
-  max-width:800px;
-  font-size:clamp(35px,5vw,55px);
-  line-height:1.05;
-  letter-spacing:-2.5px;
+  margin-top:10px;
+  max-width:850px;
+  font-size:clamp(38px,5.5vw,62px);
+  line-height:1;
+  letter-spacing:-3px;
 }
 
-.section-description{
-  margin-top:13px;
-  max-width:680px;
+.section-sub{
+  margin-top:15px;
   color:var(--muted);
+  max-width:700px;
+  font-size:14px;
 }
 
-/* WHAT I BUILD */
+/* ================= BUILD ================= */
 
 .build-grid{
-  margin-top:40px;
+  margin-top:42px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:15px;
 }
 
 .build-card{
-  padding:25px;
-  min-height:200px;
+  min-height:225px;
+  padding:27px;
   border:1px solid var(--line);
-  border-radius:20px;
-  background:linear-gradient(145deg,rgba(15,20,31,.9),rgba(8,11,18,.85));
+  border-radius:22px;
+  background:
+    linear-gradient(145deg,rgba(16,21,34,.9),rgba(7,10,17,.9));
   transition:.3s;
 }
 
 .build-card:hover{
-  transform:translateY(-7px);
+  transform:translateY(-8px);
   border-color:rgba(139,92,246,.45);
-  box-shadow:0 20px 55px rgba(0,0,0,.28);
+  box-shadow:0 30px 70px rgba(0,0,0,.28);
 }
 
 .build-icon{
-  width:48px;
-  height:48px;
+  width:52px;
+  height:52px;
   display:grid;
   place-items:center;
-  border-radius:14px;
-  background:rgba(139,92,246,.11);
+  border-radius:15px;
+  background:rgba(139,92,246,.1);
   border:1px solid rgba(139,92,246,.2);
-  font-size:23px;
+  font-size:24px;
 }
 
 .build-card h3{
   margin-top:20px;
-  font-size:18px;
+  font-size:19px;
 }
 
 .build-card p{
@@ -412,10 +463,10 @@ button{font:inherit}
   font-size:13px;
 }
 
-/* PROJECTS */
+/* ================= PROJECTS ================= */
 
-.projects{
-  margin-top:42px;
+.project-grid{
+  margin-top:45px;
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:20px;
@@ -424,67 +475,76 @@ button{font:inherit}
 .project{
   overflow:hidden;
   border:1px solid var(--line);
-  border-radius:24px;
-  background:linear-gradient(145deg,rgba(15,20,31,.92),rgba(8,11,18,.92));
+  border-radius:26px;
+  background:linear-gradient(145deg,rgba(14,19,31,.95),rgba(6,9,15,.95));
   transition:.3s;
 }
 
 .project:hover{
-  transform:translateY(-7px);
-  border-color:rgba(139,92,246,.5);
-  box-shadow:0 30px 80px rgba(0,0,0,.34);
+  transform:translateY(-8px);
+  border-color:rgba(139,92,246,.48);
+  box-shadow:0 35px 90px rgba(0,0,0,.38);
 }
 
-.project-cover{
-  height:255px;
+.project-visual{
+  height:270px;
+  position:relative;
   display:grid;
   place-items:center;
-  position:relative;
   overflow:hidden;
   background:
-    radial-gradient(circle at 50% 45%,rgba(139,92,246,.25),transparent 38%),
-    linear-gradient(135deg,#0c111d,#14112b);
+    radial-gradient(circle at 50% 45%,rgba(139,92,246,.27),transparent 38%),
+    linear-gradient(135deg,#0a101c,#17102b);
 }
 
-.project-cover:before{
+.project-visual:before{
   content:"";
   position:absolute;
-  width:230px;
-  height:230px;
+  width:240px;
+  height:240px;
   border:1px solid rgba(255,255,255,.08);
   border-radius:50%;
 }
 
-.project-cover span{
+.project-visual:after{
+  content:"";
+  position:absolute;
+  width:330px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(34,211,238,.5),transparent);
+  transform:rotate(-25deg);
+}
+
+.project-symbol{
   position:relative;
-  z-index:1;
-  font-size:85px;
-  filter:drop-shadow(0 0 30px rgba(139,92,246,.4));
-  transition:.3s;
+  z-index:2;
+  font-size:88px;
+  filter:drop-shadow(0 0 35px rgba(139,92,246,.42));
+  transition:.35s;
 }
 
-.project:hover .project-cover span{
-  transform:scale(1.1) rotate(-3deg);
+.project:hover .project-symbol{
+  transform:scale(1.12) rotate(-4deg);
 }
 
-.project-body{padding:27px}
+.project-content{padding:28px}
 
-.project-topline{
+.project-header{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:10px;
+  align-items:center;
+  gap:12px;
 }
 
-.project-number{
-  color:#7d8493;
-  font-size:11px;
+.project-header h3{font-size:26px}
+
+.project-id{
+  color:#6f7789;
+  font-size:10px;
   letter-spacing:1px;
 }
 
-.project h3{font-size:25px}
-
-.project-description{
+.project-desc{
   margin-top:10px;
   color:var(--muted);
   font-size:14px;
@@ -494,42 +554,105 @@ button{font:inherit}
   display:flex;
   flex-wrap:wrap;
   gap:7px;
-  margin-top:19px;
+  margin-top:18px;
 }
 
 .tag{
   padding:6px 10px;
   border-radius:8px;
-  background:#121927;
+  background:#101725;
   border:1px solid rgba(255,255,255,.06);
-  color:#b9dfff;
-  font-size:11px;
+  color:#bce9ff;
+  font-size:10px;
 }
 
 .project-actions{
   display:flex;
-  flex-wrap:wrap;
   gap:9px;
+  flex-wrap:wrap;
   margin-top:22px;
 }
 
-.project-btn{
+.small-btn{
   padding:9px 12px;
-  border:1px solid var(--line);
   border-radius:9px;
-  font-size:12px;
-  font-weight:800;
+  border:1px solid var(--line);
+  font-size:11px;
+  font-weight:900;
   transition:.2s;
 }
 
-.project-btn:hover{
+.small-btn:hover{
   border-color:rgba(139,92,246,.6);
 }
 
-/* ABOUT + SKILLS */
+/* ================= LAB ================= */
 
-.about-grid{
-  margin-top:40px;
+.lab{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.lab-card{
+  position:relative;
+  overflow:hidden;
+  min-height:330px;
+  padding:34px;
+  border:1px solid var(--line);
+  border-radius:26px;
+  background:linear-gradient(145deg,#0b101c,#080a11);
+}
+
+.lab-card:before{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  right:-100px;
+  bottom:-120px;
+  border-radius:50%;
+  background:rgba(139,92,246,.16);
+  filter:blur(40px);
+}
+
+.lab-icon{
+  font-size:45px;
+}
+
+.lab-card h3{
+  margin-top:20px;
+  font-size:29px;
+}
+
+.lab-card p{
+  margin-top:10px;
+  max-width:480px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.lab-list{
+  margin-top:22px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.lab-pill{
+  padding:8px 11px;
+  border-radius:9px;
+  background:#0e1522;
+  border:1px solid var(--line);
+  color:#c9cfdd;
+  font-size:10px;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-layout{
+  margin-top:43px;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
@@ -538,17 +661,17 @@ button{font:inherit}
 .panel{
   padding:32px;
   border:1px solid var(--line);
-  border-radius:23px;
+  border-radius:24px;
   background:var(--card);
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(14px);
 }
 
 .panel h3{font-size:25px}
 
 .panel p{
-  margin-top:12px;
+  margin-top:10px;
   color:var(--muted);
-  font-size:14px;
+  font-size:13px;
 }
 
 .skill-list{
@@ -562,109 +685,140 @@ button{font:inherit}
   padding:10px 13px;
   border:1px solid var(--line);
   border-radius:10px;
-  background:#0c111b;
-  font-size:12px;
+  background:#0b111c;
+  font-size:11px;
 }
 
-/* PROCESS */
+/* ================= TIMELINE ================= */
 
-.process{
-  margin-top:42px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+.timeline{
+  margin-top:45px;
+  position:relative;
+  max-width:850px;
 }
 
-.step{
-  padding:28px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:var(--card);
+.timeline:before{
+  content:"";
+  position:absolute;
+  left:8px;
+  top:5px;
+  bottom:5px;
+  width:1px;
+  background:linear-gradient(var(--purple),rgba(139,92,246,.05));
 }
 
-.step-number{
-  color:#9f8cff;
+.timeline-item{
+  position:relative;
+  padding-left:42px;
+  margin-bottom:32px;
+}
+
+.timeline-dot{
+  position:absolute;
+  left:3px;
+  top:5px;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:var(--purple);
+  box-shadow:0 0 20px rgba(139,92,246,.7);
+}
+
+.timeline-date{
+  color:#a892ff;
+  font-size:10px;
   font-weight:900;
-  font-size:12px;
+  letter-spacing:2px;
 }
 
-.step h3{margin-top:15px}
-.step p{margin-top:8px;color:var(--muted);font-size:13px}
+.timeline-item h3{
+  margin-top:8px;
+  font-size:21px;
+}
 
-/* CONTACT */
+.timeline-item p{
+  margin-top:7px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ================= CONTACT ================= */
 
 .contact-box{
+  padding:75px 30px;
   text-align:center;
-  padding:65px 30px;
+  border-radius:32px;
   border:1px solid rgba(139,92,246,.3);
-  border-radius:30px;
   background:
-    radial-gradient(circle at 50% 0,rgba(139,92,246,.22),transparent 50%),
-    linear-gradient(145deg,#0c101a,#080a11);
-  box-shadow:0 30px 100px rgba(0,0,0,.25);
+    radial-gradient(circle at 50% 0,rgba(139,92,246,.23),transparent 52%),
+    linear-gradient(145deg,#0d111d,#07090f);
+  box-shadow:0 35px 110px rgba(0,0,0,.3);
 }
 
-.contact-box .section-description{
+.contact-box .section-sub{
   margin-left:auto;
   margin-right:auto;
 }
 
 .contact-actions{
+  margin-top:29px;
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
   gap:12px;
-  margin-top:28px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
   padding:35px 0;
   border-top:1px solid var(--line);
-  color:#747a89;
-  font-size:12px;
+  color:#71798a;
+  font-size:11px;
 }
 
 .footer{
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   gap:20px;
 }
 
-/* REVEAL */
+/* ================= REVEAL ================= */
 
 .reveal{
   opacity:0;
-  transform:translateY(25px);
-  transition:opacity .7s ease,transform .7s ease;
+  transform:translateY(28px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
 }
 
-.reveal.visible{
+.reveal.show{
   opacity:1;
   transform:translateY(0);
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:1000px){
 
   .hero{
     grid-template-columns:1fr;
-    padding-top:130px;
-  }
-
-  .hero-visual{
-    min-height:430px;
+    padding-top:135px;
   }
 
   .build-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
   }
 
   .stats{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
+  }
+
+  .lab,
+  .skills-layout{
+    grid-template-columns:1fr;
   }
 }
 
@@ -673,49 +827,33 @@ footer{
   .nav-links{display:none}
 
   .hero h1{
-    font-size:54px;
-    letter-spacing:-3.5px;
-  }
-
-  .hero-description{
-    font-size:16px;
-  }
-
-  .hero-visual{
-    min-height:360px;
-  }
-
-  .core{
-    width:115px;
-    height:115px;
     font-size:55px;
+    letter-spacing:-4px;
   }
 
-  .orbit.one{width:220px;height:220px}
-  .orbit.two{width:300px;height:150px}
-  .orbit.three{width:360px;height:190px}
+  .hero-copy{
+    font-size:15px;
+  }
 
-  .float-a{top:35px;left:15px}
-  .float-b{top:55px;right:15px}
-  .float-c{bottom:40px;left:15px}
-  .float-d{bottom:25px;right:15px}
+  .ai-stage{
+    min-height:400px;
+  }
 
-  .projects,
-  .about-grid,
-  .process{
+  .project-grid{
     grid-template-columns:1fr;
   }
 
   .build-grid{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr;
   }
 
   .section{
-    padding:80px 0;
+    padding:85px 0;
   }
 
   .section-title{
-    font-size:38px;
+    font-size:40px;
+    letter-spacing:-2px;
   }
 
   .footer{
@@ -728,14 +866,14 @@ footer{
 
   .container{width:90%}
 
-  .brand-text{display:none}
+  .logo-name{display:none}
 
-  .nav-github{
+  .nav-cta{
     padding:9px 11px;
   }
 
   .hero h1{
-    font-size:47px;
+    font-size:46px;
   }
 
   .stats{
@@ -746,16 +884,30 @@ footer{
     padding:18px;
   }
 
-  .build-grid{
-    grid-template-columns:1fr;
+  .ai-one{left:12px}
+  .ai-two{right:12px}
+  .ai-three{left:12px}
+  .ai-four{right:12px}
+
+  .core{
+    width:115px;
+    height:115px;
+    font-size:50px;
   }
 
-  .project-cover{
-    height:210px;
+  .ring-a{
+    width:220px;
+    height:220px;
   }
 
-  .floating-card{
-    transform:scale(.9);
+  .ring-b{
+    width:310px;
+    height:160px;
+  }
+
+  .ring-c{
+    width:370px;
+    height:190px;
   }
 }
 </style>
@@ -763,25 +915,30 @@ footer{
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAV ================= -->
 
 <header class="navbar" id="navbar">
   <div class="container nav">
 
-    <a class="brand" href="#">
-      <div class="brand-icon">MA</div>
-      <div class="brand-text">Mohamed <span>Ayman</span></div>
+    <a class="logo" href="#">
+      <div class="logo-mark">MA</div>
+      <div class="logo-name">
+        Mohamed <span>Ayman</span>
+      </div>
     </a>
 
     <nav class="nav-links">
       <a href="#about">About</a>
-      <a href="#build">What I Build</a>
+      <a href="#build">Build</a>
       <a href="#projects">Projects</a>
+      <a href="#lab">Labs</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <a class="nav-github" href="https://github.com/moha7-design" target="_blank">
+    <a class="nav-cta"
+       href="https://github.com/moha7-design"
+       target="_blank">
       GitHub ↗
     </a>
 
@@ -789,68 +946,76 @@ footer{
 </header>
 
 
-<!-- HERO -->
-
 <main>
+
+<!-- ================= HERO ================= -->
 
 <section class="hero container">
 
   <div class="reveal">
 
-    <div class="available">
-      <i></i>
-      Building & experimenting
+    <div class="status">
+      <span class="status-dot"></span>
+      BUILDING THE FUTURE
     </div>
 
     <h1>
-      I turn ideas into
-      <span class="hero-gradient">real technology.</span>
+      Ideas become
+      <span class="gradient-text">technology.</span>
     </h1>
 
-    <p class="hero-description">
-      I'm Mohamed Ayman — a developer interested in AI, robotics,
-      mobile applications, computer vision and creative technology.
-      I like turning ambitious ideas into working prototypes.
+    <p class="hero-copy">
+      I'm Mohamed Ayman — a developer exploring AI, robotics,
+      mobile applications, computer vision and smart systems.
+      I build, experiment and turn ambitious ideas into real prototypes.
     </p>
 
-    <div class="hero-actions">
+    <div class="actions">
+
       <a class="btn btn-primary" href="#projects">
-        Explore My Projects →
+        Explore Projects →
       </a>
 
-      <a class="btn" href="https://github.com/moha7-design" target="_blank">
+      <a class="btn"
+         href="https://github.com/moha7-design"
+         target="_blank">
         GitHub ↗
       </a>
+
     </div>
 
   </div>
 
 
-  <div class="hero-visual reveal">
+  <!-- AI VISUAL -->
 
-    <div class="orbit one"></div>
-    <div class="orbit two"></div>
-    <div class="orbit three"></div>
+  <div class="ai-stage reveal" id="aiStage">
+
+    <div class="scan"></div>
+
+    <div class="ring ring-a"></div>
+    <div class="ring ring-b"></div>
+    <div class="ring ring-c"></div>
 
     <div class="core">🤖</div>
 
-    <div class="floating-card float-a">
-      <strong>AI</strong>
-      <span>Smart systems</span>
+    <div class="ai-label ai-one">
+      <strong>AI ENGINE</strong>
+      <span>Intelligent systems</span>
     </div>
 
-    <div class="floating-card float-b">
-      <strong>Flutter</strong>
-      <span>Modern apps</span>
+    <div class="ai-label ai-two">
+      <strong>FLUTTER</strong>
+      <span>Modern applications</span>
     </div>
 
-    <div class="floating-card float-c">
-      <strong>Robotics</strong>
-      <span>Hardware + code</span>
+    <div class="ai-label ai-three">
+      <strong>ROBOTICS</strong>
+      <span>Hardware + software</span>
     </div>
 
-    <div class="floating-card float-d">
-      <strong>OpenCV</strong>
+    <div class="ai-label ai-four">
+      <strong>VISION</strong>
       <span>Computer vision</span>
     </div>
 
@@ -859,60 +1024,60 @@ footer{
 </section>
 
 
-<!-- STATS -->
+<!-- ================= STATS ================= -->
 
 <section class="container stats">
 
   <div class="stat reveal">
-    <div class="stat-value">04+</div>
-    <div class="stat-label">Featured projects</div>
+    <div class="stat-number">04+</div>
+    <div class="stat-text">Featured projects</div>
   </div>
 
   <div class="stat reveal">
-    <div class="stat-value">AI</div>
-    <div class="stat-label">Technology focus</div>
+    <div class="stat-number">AI</div>
+    <div class="stat-text">Technology focus</div>
   </div>
 
   <div class="stat reveal">
-    <div class="stat-value">IoT</div>
-    <div class="stat-label">Smart systems</div>
+    <div class="stat-number">IoT</div>
+    <div class="stat-text">Smart systems</div>
   </div>
 
   <div class="stat reveal">
-    <div class="stat-value">∞</div>
-    <div class="stat-label">Ideas to explore</div>
+    <div class="stat-number">∞</div>
+    <div class="stat-text">Ideas to explore</div>
   </div>
 
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section class="section container" id="about">
 
-  <div class="eyebrow">About me</div>
+  <div class="eyebrow">01 — ABOUT</div>
 
   <h2 class="section-title">
-    Curious by nature. Building by choice.
+    Build first. Learn faster.
   </h2>
 
-  <p class="section-description">
-    I enjoy learning by building. From mobile applications to robots
-    and computer-vision experiments, I focus on turning concepts into
-    useful interactive experiences.
+  <p class="section-sub">
+    I enjoy learning by building real things — from mobile applications
+    and websites to robots, sensors and computer-vision experiments.
+    Every project is an opportunity to learn something new.
   </p>
 
 </section>
 
 
-<!-- WHAT I BUILD -->
+<!-- ================= WHAT I BUILD ================= -->
 
 <section class="section container" id="build">
 
-  <div class="eyebrow">What I build</div>
+  <div class="eyebrow">02 — WHAT I BUILD</div>
 
   <h2 class="section-title">
-    Technology across software and hardware.
+    Software meets hardware.
   </h2>
 
   <div class="build-grid">
@@ -921,7 +1086,8 @@ footer{
       <div class="build-icon">🧠</div>
       <h3>AI Applications</h3>
       <p>
-        Intelligent tools and experiments that use AI to solve practical problems.
+        Smart tools and experiments designed around practical problems
+        and intelligent interactions.
       </p>
     </article>
 
@@ -929,7 +1095,8 @@ footer{
       <div class="build-icon">📱</div>
       <h3>Mobile Apps</h3>
       <p>
-        Modern Flutter applications with clean interfaces and useful features.
+        Modern Flutter experiences with clean interfaces,
+        useful features and connected services.
       </p>
     </article>
 
@@ -937,7 +1104,8 @@ footer{
       <div class="build-icon">🦾</div>
       <h3>Robotics</h3>
       <p>
-        Hardware prototypes combining sensors, motors, microcontrollers and software.
+        Prototypes combining sensors, motors, microcontrollers
+        and software.
       </p>
     </article>
 
@@ -945,7 +1113,8 @@ footer{
       <div class="build-icon">👁️</div>
       <h3>Computer Vision</h3>
       <p>
-        Vision experiments using cameras, image processing and OpenCV.
+        Experiments using cameras, image processing and OpenCV
+        to make systems understand their environment.
       </p>
     </article>
 
@@ -954,40 +1123,39 @@ footer{
 </section>
 
 
-<!-- PROJECTS -->
+<!-- ================= PROJECTS ================= -->
 
 <section class="section container" id="projects">
 
-  <div class="eyebrow">Featured work</div>
+  <div class="eyebrow">03 — PROJECTS</div>
 
   <h2 class="section-title">
-    Projects I'm building.
+    Things I've imagined, designed and built.
   </h2>
 
-  <p class="section-description">
-    A selection of software, robotics and experimental technology concepts.
+  <p class="section-sub">
+    A selection of applications, robotics projects and experimental
+    technology concepts.
   </p>
 
 
-  <div class="projects">
+  <div class="project-grid">
 
-
-    <!-- PROJECT 01 -->
 
     <article class="project reveal">
 
-      <div class="project-cover">
-        <span>🏠</span>
+      <div class="project-visual">
+        <div class="project-symbol">🏠</div>
       </div>
 
-      <div class="project-body">
+      <div class="project-content">
 
-        <div class="project-topline">
+        <div class="project-header">
           <h3>Bastaha</h3>
-          <span class="project-number">01 / 04</span>
+          <span class="project-id">PROJECT 01</span>
         </div>
 
-        <p class="project-description">
+        <p class="project-desc">
           A modern home-services platform concept for discovering,
           booking and managing household services.
         </p>
@@ -996,14 +1164,18 @@ footer{
           <span class="tag">Flutter</span>
           <span class="tag">Firebase</span>
           <span class="tag">UI/UX</span>
+          <span class="tag">Mobile</span>
         </div>
 
         <div class="project-actions">
-          <a class="project-btn" href="https://github.com/moha7-design" target="_blank">
+          <a class="small-btn"
+             href="https://github.com/moha7-design"
+             target="_blank">
             GitHub ↗
           </a>
-          <a class="project-btn" href="#contact">
-            View details →
+
+          <a class="small-btn" href="#contact">
+            Details →
           </a>
         </div>
 
@@ -1012,22 +1184,20 @@ footer{
     </article>
 
 
-    <!-- PROJECT 02 -->
-
     <article class="project reveal">
 
-      <div class="project-cover">
-        <span>🦾</span>
+      <div class="project-visual">
+        <div class="project-symbol">🦾</div>
       </div>
 
-      <div class="project-body">
+      <div class="project-content">
 
-        <div class="project-topline">
+        <div class="project-header">
           <h3>Robotic Arm</h3>
-          <span class="project-number">02 / 04</span>
+          <span class="project-id">PROJECT 02</span>
         </div>
 
-        <p class="project-description">
+        <p class="project-desc">
           A robotics experiment combining motor control,
           sensors, Arduino and computer vision.
         </p>
@@ -1036,14 +1206,18 @@ footer{
           <span class="tag">Python</span>
           <span class="tag">OpenCV</span>
           <span class="tag">Arduino</span>
+          <span class="tag">Robotics</span>
         </div>
 
         <div class="project-actions">
-          <a class="project-btn" href="https://github.com/moha7-design" target="_blank">
+          <a class="small-btn"
+             href="https://github.com/moha7-design"
+             target="_blank">
             GitHub ↗
           </a>
-          <a class="project-btn" href="#contact">
-            View details →
+
+          <a class="small-btn" href="#contact">
+            Details →
           </a>
         </div>
 
@@ -1052,23 +1226,21 @@ footer{
     </article>
 
 
-    <!-- PROJECT 03 -->
-
     <article class="project reveal">
 
-      <div class="project-cover">
-        <span>🤖</span>
+      <div class="project-visual">
+        <div class="project-symbol">🤖</div>
       </div>
 
-      <div class="project-body">
+      <div class="project-content">
 
-        <div class="project-topline">
+        <div class="project-header">
           <h3>Medical Robot</h3>
-          <span class="project-number">03 / 04</span>
+          <span class="project-id">PROJECT 03</span>
         </div>
 
-        <p class="project-description">
-          A smart assistant robot concept featuring a screen,
+        <p class="project-desc">
+          A smart assistant robot concept with a screen,
           voice interaction and connected sensors.
         </p>
 
@@ -1076,14 +1248,18 @@ footer{
           <span class="tag">Python</span>
           <span class="tag">AI</span>
           <span class="tag">IoT</span>
+          <span class="tag">Raspberry Pi</span>
         </div>
 
         <div class="project-actions">
-          <a class="project-btn" href="https://github.com/moha7-design" target="_blank">
+          <a class="small-btn"
+             href="https://github.com/moha7-design"
+             target="_blank">
             GitHub ↗
           </a>
-          <a class="project-btn" href="#contact">
-            View details →
+
+          <a class="small-btn" href="#contact">
+            Details →
           </a>
         </div>
 
@@ -1092,22 +1268,20 @@ footer{
     </article>
 
 
-    <!-- PROJECT 04 -->
-
     <article class="project reveal">
 
-      <div class="project-cover">
-        <span>🔷</span>
+      <div class="project-visual">
+        <div class="project-symbol">🔷</div>
       </div>
 
-      <div class="project-body">
+      <div class="project-content">
 
-        <div class="project-topline">
+        <div class="project-header">
           <h3>Hologram Table</h3>
-          <span class="project-number">04 / 04</span>
+          <span class="project-id">PROJECT 04</span>
         </div>
 
-        <p class="project-description">
+        <p class="project-desc">
           An interactive hologram-style table concept using cameras,
           projection and computer vision.
         </p>
@@ -1116,14 +1290,18 @@ footer{
           <span class="tag">Python</span>
           <span class="tag">OpenCV</span>
           <span class="tag">Projection</span>
+          <span class="tag">Vision</span>
         </div>
 
         <div class="project-actions">
-          <a class="project-btn" href="https://github.com/moha7-design" target="_blank">
+          <a class="small-btn"
+             href="https://github.com/moha7-design"
+             target="_blank">
             GitHub ↗
           </a>
-          <a class="project-btn" href="#contact">
-            View details →
+
+          <a class="small-btn" href="#contact">
+            Details →
           </a>
         </div>
 
@@ -1136,24 +1314,84 @@ footer{
 </section>
 
 
-<!-- SKILLS -->
+<!-- ================= LABS ================= -->
+
+<section class="section container" id="lab">
+
+  <div class="eyebrow">04 — LABS</div>
+
+  <h2 class="section-title">
+    Where experiments happen.
+  </h2>
+
+  <div class="lab">
+
+    <article class="lab-card reveal">
+
+      <div class="lab-icon">🧠</div>
+
+      <h3>AI Lab</h3>
+
+      <p>
+        Exploring artificial intelligence, computer vision,
+        intelligent interfaces and experimental systems.
+      </p>
+
+      <div class="lab-list">
+        <span class="lab-pill">AI</span>
+        <span class="lab-pill">Python</span>
+        <span class="lab-pill">OpenCV</span>
+        <span class="lab-pill">Computer Vision</span>
+        <span class="lab-pill">Smart Systems</span>
+      </div>
+
+    </article>
+
+
+    <article class="lab-card reveal">
+
+      <div class="lab-icon">🦾</div>
+
+      <h3>Robotics Lab</h3>
+
+      <p>
+        Turning electronics, sensors and code into physical
+        prototypes that can interact with the world.
+      </p>
+
+      <div class="lab-list">
+        <span class="lab-pill">Arduino</span>
+        <span class="lab-pill">Raspberry Pi</span>
+        <span class="lab-pill">Sensors</span>
+        <span class="lab-pill">Motors</span>
+        <span class="lab-pill">IoT</span>
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
 
 <section class="section container" id="skills">
 
-  <div class="eyebrow">Skills</div>
+  <div class="eyebrow">05 — SKILLS</div>
 
   <h2 class="section-title">
-    Tools I like working with.
+    The tools behind the ideas.
   </h2>
 
-  <div class="about-grid">
+  <div class="skills-layout">
 
     <div class="panel reveal">
 
       <h3>Development</h3>
 
       <p>
-        Building interfaces, applications and prototypes with modern development tools.
+        Applications, interfaces and connected digital experiences.
       </p>
 
       <div class="skill-list">
@@ -1170,19 +1408,19 @@ footer{
 
     <div class="panel reveal">
 
-      <h3>AI & Robotics</h3>
+      <h3>AI & Hardware</h3>
 
       <p>
-        Exploring intelligent systems, computer vision and hardware projects.
+        Intelligent systems, robotics and computer-vision experiments.
       </p>
 
       <div class="skill-list">
         <span class="skill">Python</span>
-        <span class="skill">OpenCV</span>
         <span class="skill">AI</span>
+        <span class="skill">OpenCV</span>
         <span class="skill">Arduino</span>
+        <span class="skill">Raspberry Pi</span>
         <span class="skill">IoT</span>
-        <span class="skill">Robotics</span>
       </div>
 
     </div>
@@ -1192,39 +1430,53 @@ footer{
 </section>
 
 
-<!-- PROCESS -->
+<!-- ================= TIMELINE ================= -->
 
 <section class="section container">
 
-  <div class="eyebrow">How I work</div>
+  <div class="eyebrow">06 — JOURNEY</div>
 
   <h2 class="section-title">
-    From idea to prototype.
+    Learn. Build. Experiment. Repeat.
   </h2>
 
-  <div class="process">
+  <div class="timeline">
 
-    <div class="step reveal">
-      <div class="step-number">01 — IDEA</div>
-      <h3>Explore</h3>
+    <div class="timeline-item reveal">
+      <span class="timeline-dot"></span>
+      <div class="timeline-date">START</div>
+      <h3>Curiosity became coding.</h3>
       <p>
-        Understand the problem, explore possibilities and define the concept.
+        Exploring how software can turn ideas into useful things.
       </p>
     </div>
 
-    <div class="step reveal">
-      <div class="step-number">02 — BUILD</div>
-      <h3>Prototype</h3>
+    <div class="timeline-item reveal">
+      <span class="timeline-dot"></span>
+      <div class="timeline-date">BUILD</div>
+      <h3>Apps became prototypes.</h3>
       <p>
-        Turn the concept into an interactive software or hardware prototype.
+        Building mobile applications and experimenting with interfaces,
+        databases and connected services.
       </p>
     </div>
 
-    <div class="step reveal">
-      <div class="step-number">03 — IMPROVE</div>
-      <h3>Experiment</h3>
+    <div class="timeline-item reveal">
+      <span class="timeline-dot"></span>
+      <div class="timeline-date">EXPLORE</div>
+      <h3>Software met hardware.</h3>
       <p>
-        Test, learn, improve and keep pushing the idea further.
+        Moving into robotics, sensors, Raspberry Pi, Arduino and computer vision.
+      </p>
+    </div>
+
+    <div class="timeline-item reveal">
+      <span class="timeline-dot"></span>
+      <div class="timeline-date">NEXT</div>
+      <h3>More ambitious ideas.</h3>
+      <p>
+        The goal is simple: keep learning and build technology
+        that feels useful, creative and exciting.
       </p>
     </div>
 
@@ -1233,20 +1485,21 @@ footer{
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section class="section container" id="contact">
 
   <div class="contact-box reveal">
 
-    <div class="eyebrow">Let's connect</div>
+    <div class="eyebrow">07 — CONTACT</div>
 
     <h2 class="section-title" style="margin-left:auto;margin-right:auto">
-      Have an idea worth building?
+      Let's build something amazing.
     </h2>
 
-    <p class="section-description">
-      Explore my projects or connect with me through GitHub and LinkedIn.
+    <p class="section-sub" style="margin-left:auto;margin-right:auto">
+      Want to explore my work or follow what I'm building?
+      Find me on GitHub and LinkedIn.
     </p>
 
     <div class="contact-actions">
@@ -1254,7 +1507,7 @@ footer{
       <a class="btn btn-primary"
          href="https://github.com/moha7-design"
          target="_blank">
-        Visit GitHub ↗
+        GitHub ↗
       </a>
 
       <a class="btn"
@@ -1272,37 +1525,73 @@ footer{
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
   <div class="container footer">
     <span>© 2026 Mohamed Ayman</span>
-    <span>Developer • AI • Robotics</span>
+    <span>AI • Robotics • Apps • Technology</span>
   </div>
 </footer>
 
 
 <script>
+
+/* ================= NAVBAR ================= */
+
 const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll",()=>{
-  navbar.classList.toggle("scrolled",window.scrollY>30);
+  navbar.classList.toggle("scrolled",window.scrollY > 35);
 });
+
+
+/* ================= REVEAL ================= */
 
 const observer = new IntersectionObserver(
   entries=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
-        entry.target.classList.add("visible");
+        entry.target.classList.add("show");
       }
     });
   },
   {threshold:.12}
 );
 
-document.querySelectorAll(".reveal").forEach(el=>{
-  observer.observe(el);
+document.querySelectorAll(".reveal").forEach(element=>{
+  observer.observe(element);
 });
+
+
+/* ================= HERO 3D MOUSE ================= */
+
+const stage = document.getElementById("aiStage");
+
+if(stage){
+
+  stage.addEventListener("mousemove",(event)=>{
+
+    const rect = stage.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const rotateY = ((x / rect.width) - .5) * 8;
+    const rotateX = ((y / rect.height) - .5) * -8;
+
+    stage.style.transform =
+      `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+  });
+
+  stage.addEventListener("mouseleave",()=>{
+    stage.style.transform =
+      "perspective(900px) rotateX(0deg) rotateY(0deg)";
+  });
+
+}
+
 </script>
 
 </body>
